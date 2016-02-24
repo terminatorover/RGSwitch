@@ -3,3 +3,6 @@ RGSwitch is a "Fluid Switch" inspired by Leonardo Zakour http://www.materialup.c
 
 To use it simply get the RGSwitch.h and RGSwitch.m files into your project
 and #import "RGSwitch.h"
+
+## Author
+Robera Geleta, roberageleta@gmail.com
