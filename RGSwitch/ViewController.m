@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    RGSwitch *switchView = [[RGSwitch alloc] initWithFrame:CGRectMake(0, 0, 10000, 90)];//to demonstare that the width value is ignored
+    RGSwitch *switchView = [[RGSwitch alloc] initWithFrame:CGRectMake(0, 0, 10000,50)];//to demonstare that the width value is ignored
     [self.view addSubview:switchView];
     switchView.center = self.view.center;
     self.view.backgroundColor = switchView.backgroundColor;

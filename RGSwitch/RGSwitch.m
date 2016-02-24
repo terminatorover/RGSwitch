@@ -57,7 +57,7 @@
     CGFloat x2;
     CGFloat y2;
 
-    BOOL _isAnimating;
+    BOOL ;
 
     CADisplayLink *_displayLink;
     UITapGestureRecognizer *_tapGestureRecognizer;
@@ -86,7 +86,6 @@
         _leftCenterPoint = CGPointMake(_bigCircleDimension, yMidPoint);
         _rightCenterPoint = CGPointMake(_switchWidth - _bigCircleDimension, yMidPoint);
         
-        _isAnimating = NO;
         _isOn = NO;
 
         _displayLink = [CADisplayLink displayLinkWithTarget:self
@@ -360,7 +359,6 @@
 
 - (void)animateToOn
 {
-    _isAnimating = YES;
     _displayLink.paused = NO;
     CGFloat time = TOTAL_ANIMATION_TIME;
      [UIView animateWithDuration:time
@@ -377,9 +375,9 @@
                      }];
 
 
-     [UIView animateWithDuration:time
+     [UIView animateWithDuration:(time * .8)
                           delay:(time *.1)
-         usingSpringWithDamping:.4//1
+         usingSpringWithDamping:.5//1
           initialSpringVelocity:.6//2
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -387,7 +385,6 @@
                          [self setView:self.controlPoint2 right:YES big:NO top:NO];
                      }
                      completion:^(BOOL finished) {
-                         _isAnimating = NO;
                          _displayLink.paused = YES;
                          _isOn = YES;
                      }];
@@ -396,7 +393,7 @@
 
 - (void)animateToOff
 {
-    _isAnimating = YES;
+
     _displayLink.paused = NO;
     CGFloat time = TOTAL_ANIMATION_TIME;
 
@@ -414,9 +411,9 @@
                      }];
 
 
-    [UIView animateWithDuration:time
+    [UIView animateWithDuration:(time *.8)
                           delay:(time *.1)
-         usingSpringWithDamping:.4
+         usingSpringWithDamping:.5
           initialSpringVelocity:.6
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -424,7 +421,6 @@
                          [self setView:_controlPoint4 right:NO big:NO top:NO];
                      }
                      completion:^(BOOL finished) {
-                         _isAnimating = NO;
                          _displayLink.paused = YES;
                          _isOn = NO;
                      }];
@@ -487,7 +483,7 @@
 
 - (void)tapped
 {
-    if (!_isAnimating) {
+    if (YES) {
         if (_isOn) {
             [self animateToOff];
         }
