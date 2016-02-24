@@ -165,17 +165,18 @@
     //---------------  -----------------\\ the control point views drive the params
     //and we compute the center and radius for both circles
 
-    CGPoint pointAView = [self layerForView:self.controlPoint1];
-    CGPoint pointBView = [self layerForView:self.controlPoint2];
-    CGPoint pointCView = [self layerForView:self.controlPoint3];
-    CGPoint pointDView = [self layerForView:self.controlPoint4];
-    
-    circleLeftCenter = CGPointMake(pointAView.x,(pointAView.y + pointBView.y) /2.0);
-    circleRightCenter = CGPointMake(pointDView.x,(pointCView.y + pointDView.y) /2.0);
+    CGPoint pointAViewCenter = [self layerCenterForView:self.controlPoint1];
+    CGPoint pointBViewCenter = [self layerCenterForView:self.controlPoint2];
+    CGPoint pointCViewCenter = [self layerCenterForView:self.controlPoint3];
+    CGPoint pointDViewCenter = [self layerCenterForView:self.controlPoint4];
+
+
+    circleLeftCenter = CGPointMake(pointAViewCenter.x,(pointAViewCenter.y + pointBViewCenter.y) /2.0);
+    circleRightCenter = CGPointMake(pointDViewCenter.x,(pointCViewCenter.y + pointDViewCenter.y) /2.0);
 
     
-    r1 = (pointBView.y - pointAView.y)/2.0;
-    r2 = (pointDView.y - pointCView.y)/2.0;
+    r1 = (pointBViewCenter.y - pointAViewCenter.y)/2.0;
+    r2 = (pointDViewCenter.y - pointCViewCenter.y)/2.0;
 
     circleLeftRadius = r1;
     circleRightRadius = r2;
@@ -250,7 +251,8 @@
     [gluePath moveToPoint: point1];
 
 
-    [self.buttonColor setFill];
+
+    [[UIColor blackColor] setFill];
     [gluePath fill];
 }
 
@@ -458,7 +460,7 @@
     view.center = finalPoint;
 }
 
-- (CGPoint )layerForView:(UIView *)view
+- (CGPoint )layerCenterForView:(UIView *)view
 {
     CALayer *layer;
     layer = (CALayer *)view.layer.presentationLayer;
@@ -468,6 +470,15 @@
     return ((CALayer *)view.layer.modelLayer).position;
 }
 
+- (CALayer *)layerForView:(UIView *)view
+{
+    CALayer *layer;
+    layer = (CALayer *)view.layer.presentationLayer;
+    if (layer) {
+        return layer;
+    }
+    return  view.layer.modelLayer;
+}
 
 #pragma mark - Tapped
 
