@@ -433,11 +433,11 @@
     }
     else {
         if (big) {
-            finalPoint = CGPointMake(_leftCenterPoint.x + 4,
+            finalPoint = CGPointMake(_leftCenterPoint.x + 3,
                                      _leftCenterPoint.y + (_bigCircleDimension/2.0 * offsetType));
         }
         else {
-            finalPoint = CGPointMake(_leftCenterPoint.x + 4,
+            finalPoint = CGPointMake(_leftCenterPoint.x + 3,
                                      _leftCenterPoint.y + (_smallCircleDimension/2.0 * offsetType));
         }
     }
