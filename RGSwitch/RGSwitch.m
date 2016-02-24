@@ -170,7 +170,6 @@
     CGPoint pointCViewCenter = [self layerCenterForView:self.controlPoint3];
     CGPoint pointDViewCenter = [self layerCenterForView:self.controlPoint4];
 
-
     circleLeftCenter = CGPointMake(pointAViewCenter.x,(pointAViewCenter.y + pointBViewCenter.y) /2.0);
     circleRightCenter = CGPointMake(pointDViewCenter.x,(pointCViewCenter.y + pointDViewCenter.y) /2.0);
 
@@ -231,11 +230,15 @@
         bottomOffset = bottomCenterOfLeftCirlce.y;
     }
 
+    CGFloat point1ViewTop = CGRectGetMinY([self layerForView:self.controlPoint1].frame);
+    CGFloat point2ViewBottom = CGRectGetMaxY([self layerForView:self.controlPoint2].frame);
+    CGFloat point3ViewTop = CGRectGetMaxY([self layerForView:self.controlPoint3].frame);
+    CGFloat point4ViewBottom = CGRectGetMaxY([self layerForView:self.controlPoint4].frame);
 
-    point1 = CGPointMake(circleLeftCenter.x, circleLeftCenter.y - circleLeftRadius);
-    point2 = CGPointMake(circleLeftCenter.x, circleLeftCenter.y + circleLeftRadius);
-    point3 = CGPointMake(circleRightCenter.x, circleRightCenter.y + circleRightRadius);
-    point4 = CGPointMake(circleRightCenter.x, circleRightCenter.y - circleRightRadius);
+    point1 = CGPointMake(circleLeftCenter.x, point1ViewTop);
+    point2 = CGPointMake(circleLeftCenter.x, point2ViewBottom);
+    point4 = CGPointMake(circleRightCenter.x, point3ViewTop);
+    point3 = CGPointMake(circleRightCenter.x, point4ViewBottom);
     
     pointC1 = CGPointMake((circleRightCenter.x + circleLeftCenter.x)/2.0
                          , bottomOffset + offsetHeight);
@@ -252,7 +255,7 @@
 
 
 
-    [[UIColor blackColor] setFill];
+    [ self.buttonColor setFill];
     [gluePath fill];
 }
 
