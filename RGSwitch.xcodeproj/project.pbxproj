@@ -13,6 +13,7 @@
 		A1DFB2031C7D874E0013A15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1DFB2011C7D874E0013A15F /* Main.storyboard */; };
 		A1DFB2051C7D874E0013A15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1DFB2041C7D874E0013A15F /* Assets.xcassets */; };
 		A1DFB2081C7D874E0013A15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1DFB2061C7D874E0013A15F /* LaunchScreen.storyboard */; };
+		A1DFB2111C7D87600013A15F /* RGSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DFB2101C7D87600013A15F /* RGSwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		A1DFB2041C7D874E0013A15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1DFB2071C7D874E0013A15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1DFB2091C7D874E0013A15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1DFB20F1C7D87600013A15F /* RGSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGSwitch.h; sourceTree = "<group>"; };
+		A1DFB2101C7D87600013A15F /* RGSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGSwitch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				A1DFB1FE1C7D874E0013A15F /* ViewController.h */,
 				A1DFB1FF1C7D874E0013A15F /* ViewController.m */,
 				A1DFB2011C7D874E0013A15F /* Main.storyboard */,
+				A1DFB20F1C7D87600013A15F /* RGSwitch.h */,
+				A1DFB2101C7D87600013A15F /* RGSwitch.m */,
 				A1DFB2041C7D874E0013A15F /* Assets.xcassets */,
 				A1DFB2061C7D874E0013A15F /* LaunchScreen.storyboard */,
 				A1DFB2091C7D874E0013A15F /* Info.plist */,
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DFB2111C7D87600013A15F /* RGSwitch.m in Sources */,
 				A1DFB2001C7D874E0013A15F /* ViewController.m in Sources */,
 				A1DFB1FD1C7D874E0013A15F /* AppDelegate.m in Sources */,
 				A1DFB1FA1C7D874E0013A15F /* main.m in Sources */,

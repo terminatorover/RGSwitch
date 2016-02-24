@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "RGSwitch.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    RGSwitch *switchView = [[RGSwitch alloc] initWithFrame:CGRectMake(0, 0, 10000, 90)];
+    [self.view addSubview:switchView];
+    switchView.center = self.view.center;
+
 }
 
 - (void)didReceiveMemoryWarning {
