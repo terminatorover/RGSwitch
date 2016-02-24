@@ -128,21 +128,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
-    for (UIView *view in self.subviews) {
-        if (view == self.controlPoint1 ||
-            view == self.controlPoint2 ||
-            view == self.controlPoint3 ||
-            view == self.controlPoint4) {
-            continue;
-        }
-        else {
-            [view removeFromSuperview];
-        }
-    }
-
-    // Drawing code
-
-
     _stripHeight = _bigCircleDimension * .8;
     _stripRadius = _stripHeight /2.0;
     CGFloat yMidPoint = _switchHeight/2.0;//Y mid point for the two anchors
