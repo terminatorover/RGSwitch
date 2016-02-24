@@ -360,7 +360,7 @@
     CGFloat time = TOTAL_ANIMATION_TIME;
      [UIView animateWithDuration:time
                           delay:0
-         usingSpringWithDamping:.4
+         usingSpringWithDamping:.5
           initialSpringVelocity:.6
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
